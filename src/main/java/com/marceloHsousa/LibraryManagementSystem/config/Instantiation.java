@@ -6,11 +6,11 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class Instatiation implements CommandLineRunner {
+public class Instantiation implements CommandLineRunner {
 
     private UserRepository userRepository;
 
-    public Instatiation(UserRepository userRepository) {
+    public Instantiation(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
