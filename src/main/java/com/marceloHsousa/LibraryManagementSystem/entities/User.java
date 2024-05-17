@@ -2,7 +2,6 @@ package com.marceloHsousa.LibraryManagementSystem.entities;
 
 import jakarta.persistence.*;
 
-import javax.management.relation.Role;
 import java.util.Objects;
 
 
@@ -23,7 +22,7 @@ public class User {
     private String email;
 
     @Column(name="password")
-    private Integer password;
+    private String password;
 
     @Column(name="role")
     private String role;
@@ -31,7 +30,7 @@ public class User {
     public User() {
     }
 
-    public User(String name, String email, Integer password, String role) {
+    public User(String name, String email, String password, String role) {
         this.name = name;
         this.email = email;
         this.password = password;
@@ -62,11 +61,11 @@ public class User {
         this.email = email;
     }
 
-    public Integer getPassword() {
+    public String getPassword() {
         return password;
     }
 
-    public void setPassword(Integer password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 
