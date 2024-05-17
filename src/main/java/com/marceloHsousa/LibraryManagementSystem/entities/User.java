@@ -2,6 +2,7 @@ package com.marceloHsousa.LibraryManagementSystem.entities;
 
 import jakarta.persistence.*;
 
+import javax.management.relation.Role;
 import java.util.Objects;
 
 
@@ -12,19 +13,29 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id")
     private Long id;
+
+    @Column(name="name")
     private String name;
+
+    @Column(name="email")
     private String email;
+
+    @Column(name="password")
     private Integer password;
+
+    @Column(name="role")
+    private String role;
 
     public User() {
     }
 
-    public User(Long id, String name, String email, Integer password) {
-        this.id = id;
+    public User(String name, String email, Integer password, String role) {
         this.name = name;
         this.email = email;
         this.password = password;
+        this.role = role;
     }
 
     public Long getId() {
@@ -57,6 +68,14 @@ public class User {
 
     public void setPassword(Integer password) {
         this.password = password;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 
     @Override
