@@ -4,6 +4,7 @@ import com.marceloHsousa.LibraryManagementSystem.entities.User;
 import com.marceloHsousa.LibraryManagementSystem.repositories.UserRepository;
 import com.marceloHsousa.LibraryManagementSystem.services.exceptions.DatabaseException;
 import com.marceloHsousa.LibraryManagementSystem.services.exceptions.ResourcesNotFoundException;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -52,6 +53,22 @@ public class UserService {
         }
     }
 
+    public User update(Long id, User obj){
 
+        try {
+            User entity = userRepository.getReferenceById(id);
+            updateData(entity, obj);
+            return  userRepository.save(entity);
 
+        } catch (EntityNotFoundException e){
+            e.printStackTrace();
+            throw  new ResourcesNotFoundException(id);
+        }
+    }
+    private void updateData(User entity, User obj) {
+
+        entity.setName(obj.getName());
+        entity.setEmail(obj.getEmail());
+        entity.setPassword(obj.getPassword());
+    }
 }
