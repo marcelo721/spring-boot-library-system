@@ -9,7 +9,7 @@ import java.util.Objects;
 
 
 @Entity
-@Table(name = "User_table")
+@Table(name = "users")
 public class User {
 
 

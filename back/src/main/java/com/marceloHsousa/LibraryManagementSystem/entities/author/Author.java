@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name="author_table")
+@Table(name="authors")
 public class Author {
 
     @Id

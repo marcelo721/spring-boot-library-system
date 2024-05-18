@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name="loan_table")
+@Table(name="loans")
 public class Loan {
 
     @Id
