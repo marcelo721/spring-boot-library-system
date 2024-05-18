@@ -20,14 +20,28 @@ public class Book {
     @Column(name="available")
     private Boolean available;
 
+    @ManyToOne(fetch = FetchType.EAGER,  cascade = {CascadeType.DETACH, CascadeType.MERGE,
+                                                    CascadeType.PERSIST, CascadeType.REFRESH})
+    @JoinColumn(name="author_id")
+    private Author author;
+
     public Book(){
 
     }
 
-    public Book(String title, String isbn, Boolean available) {
+    public Book(String title, String isbn, Boolean available, Author author) {
         this.title = title;
         this.isbn = isbn;
         this.available = available;
+        this.author = author;
+    }
+
+    public Author getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Author author) {
+        this.author = author;
     }
 
     public Long getId() {
