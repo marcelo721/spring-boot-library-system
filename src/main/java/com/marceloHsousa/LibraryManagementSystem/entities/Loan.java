@@ -22,7 +22,7 @@ public class Loan {
 
     @OneToOne(fetch = FetchType.EAGER, cascade = {CascadeType.DETACH, CascadeType.MERGE,
                                                   CascadeType.PERSIST, CascadeType.REFRESH})
-    @JoinColumn(name="bood_id")
+    @JoinColumn(name="book_id")
     private Book book;
 
     public Loan(){
