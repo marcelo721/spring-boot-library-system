@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -38,10 +39,12 @@ public class UserService {
         }
     }
 
+    @Transactional
     public User insert (User user){
         return userRepository.save(user);
     }
 
+    @Transactional
     public void delete(Long id){
         try {
             userRepository.deleteById(id);
@@ -54,6 +57,7 @@ public class UserService {
         }
     }
 
+    @Transactional
     public User update(Long id, User obj){
 
         try {
@@ -62,10 +66,11 @@ public class UserService {
             return  userRepository.save(entity);
 
         } catch (EntityNotFoundException e){
-            e.printStackTrace();
-            throw  new ResourcesNotFoundException(id);
+            throw new ResourcesNotFoundException(id);
         }
     }
+
+    @Transactional
     private void updateData(User entity, User obj) {
 
         entity.setName(obj.getName());
