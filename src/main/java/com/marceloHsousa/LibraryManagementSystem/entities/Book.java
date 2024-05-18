@@ -2,6 +2,9 @@ package com.marceloHsousa.LibraryManagementSystem.entities;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name="book_table")
 public class Book {
@@ -25,8 +28,17 @@ public class Book {
     @JoinColumn(name="author_id")
     private Author author;
 
-    public Book(){
+    @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.DETACH, CascadeType.MERGE,
+                                                    CascadeType.PERSIST, CascadeType.REFRESH})
+    @JoinTable(
+            name = "book_category",
+            joinColumns = @JoinColumn(name = "book_id"),
+            inverseJoinColumns = @JoinColumn(name = "category_id")
+    )
+    private List<Category> categories;
 
+    public Book(){
+        this.categories=new ArrayList<>();
     }
 
     public Book(String title, String isbn, Boolean available, Author author) {
@@ -34,6 +46,7 @@ public class Book {
         this.isbn = isbn;
         this.available = available;
         this.author = author;
+        this.categories=new ArrayList<>();
     }
 
     public Author getAuthor() {
