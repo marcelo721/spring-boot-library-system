@@ -1,8 +1,7 @@
 package com.marceloHsousa.LibraryManagementSystem.resources.exceptions;
 
-import com.marceloHsousa.LibraryManagementSystem.resources.exceptions.StandardError;
-import com.marceloHsousa.LibraryManagementSystem.services.exceptions.DatabaseException;
-import com.marceloHsousa.LibraryManagementSystem.services.exceptions.ResourcesNotFoundException;
+import com.marceloHsousa.LibraryManagementSystem.entities.services.exceptions.DatabaseException;
+import com.marceloHsousa.LibraryManagementSystem.entities.services.exceptions.ResourcesNotFoundException;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
