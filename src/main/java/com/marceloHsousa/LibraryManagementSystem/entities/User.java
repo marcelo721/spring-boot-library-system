@@ -1,7 +1,9 @@
 package com.marceloHsousa.LibraryManagementSystem.entities;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.Fetch;
 
+import java.util.List;
 import java.util.Objects;
 
 
@@ -26,6 +28,10 @@ public class User {
 
     @Column(name="role")
     private String role;
+
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name="user_id")
+    private List<Loan> loan;
 
     public User() {
     }
