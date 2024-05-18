@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping(value = "/users")
 public class UserResources {
@@ -21,6 +23,13 @@ public class UserResources {
     @Autowired
     public UserResources(UserService service) {
         this.service = service;
+    }
+
+    @GetMapping
+    public ResponseEntity<List<User>> findAll(){
+        List<User> list = service.findAll();
+
+        return ResponseEntity.ok().body(list);
     }
 
     @GetMapping("/{id}")

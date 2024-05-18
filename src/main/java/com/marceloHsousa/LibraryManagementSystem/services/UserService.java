@@ -31,4 +31,8 @@ public class UserService {
             throw new RuntimeException("User Not Found"); //placeholder
         }
     }
+
+    public User insert (User user){
+        return userRepository.save(user);
+    }
 }

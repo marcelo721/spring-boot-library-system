@@ -21,6 +21,7 @@ public class Instantiation implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
         userRepository.deleteAll();
+
         User gabe = new User("Gabriel meireles", "gabriel@gmail.com", passwordEncoder.encode("gabe123"), "");
         userRepository.save(gabe);
     }
