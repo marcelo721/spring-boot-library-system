@@ -2,7 +2,7 @@ package com.marceloHsousa.LibraryManagementSystem.resources;
 
 
 import com.marceloHsousa.LibraryManagementSystem.entities.user.User;
-import com.marceloHsousa.LibraryManagementSystem.entities.services.UserService;
+import com.marceloHsousa.LibraryManagementSystem.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

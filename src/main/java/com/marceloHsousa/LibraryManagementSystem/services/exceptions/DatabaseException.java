@@ -1,4 +1,4 @@
-package com.marceloHsousa.LibraryManagementSystem.entities.services.exceptions;
+package com.marceloHsousa.LibraryManagementSystem.services.exceptions;
 
 public class DatabaseException extends RuntimeException {
 

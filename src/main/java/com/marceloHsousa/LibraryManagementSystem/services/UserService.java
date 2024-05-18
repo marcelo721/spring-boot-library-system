@@ -1,9 +1,9 @@
-package com.marceloHsousa.LibraryManagementSystem.entities.services;
+package com.marceloHsousa.LibraryManagementSystem.services;
 
 import com.marceloHsousa.LibraryManagementSystem.entities.user.User;
-import com.marceloHsousa.LibraryManagementSystem.entities.services.exceptions.ResourcesNotFoundException;
+import com.marceloHsousa.LibraryManagementSystem.services.exceptions.ResourcesNotFoundException;
 import com.marceloHsousa.LibraryManagementSystem.repositories.UserRepository;
-import com.marceloHsousa.LibraryManagementSystem.entities.services.exceptions.DatabaseException;
+import com.marceloHsousa.LibraryManagementSystem.services.exceptions.DatabaseException;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
