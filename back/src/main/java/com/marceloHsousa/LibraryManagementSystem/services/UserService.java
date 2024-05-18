@@ -1,6 +1,7 @@
 package com.marceloHsousa.LibraryManagementSystem.services;
 
 import com.marceloHsousa.LibraryManagementSystem.entities.user.User;
+import com.marceloHsousa.LibraryManagementSystem.entities.user.exceptions.UserNotFoundException;
 import com.marceloHsousa.LibraryManagementSystem.services.exceptions.ResourcesNotFoundException;
 import com.marceloHsousa.LibraryManagementSystem.repositories.UserRepository;
 import com.marceloHsousa.LibraryManagementSystem.services.exceptions.DatabaseException;
@@ -33,7 +34,7 @@ public class UserService {
         if(user.isPresent()){
             return user.get();
         }else{
-            throw new RuntimeException("User Not Found"); //placeholder
+            throw new UserNotFoundException("User Not Found");
         }
     }
 
