@@ -22,7 +22,7 @@ public class Instantiation implements CommandLineRunner {
 
         userRepository.deleteAll();
 
-        User gabe = new User("Gabriel meireles", "gabriel@gmail.com", passwordEncoder.encode("gabe123"), "");
+        User gabe = new User("Gabriel meireles", "gabriel@gmail.com", passwordEncoder.encode("gabe123"), "ROLE_ADMIN");
         userRepository.save(gabe);
     }
 }

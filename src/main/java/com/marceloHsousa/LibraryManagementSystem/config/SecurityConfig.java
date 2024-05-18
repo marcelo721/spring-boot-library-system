@@ -13,7 +13,10 @@ public class SecurityConfig {
 
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
-        return http.csrf().disable().formLogin(Customizer.withDefaults())
+        return http.csrf().disable()
+                .authorizeHttpRequests((request) -> request
+                        .requestMatchers("/users").hasRole("ADMIN")) //Teste da role admin
+                .formLogin(Customizer.withDefaults())
                 .httpBasic(Customizer.withDefaults()).build();
     }
 
