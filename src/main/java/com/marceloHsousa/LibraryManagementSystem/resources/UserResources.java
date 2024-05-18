@@ -1,7 +1,7 @@
 package com.marceloHsousa.LibraryManagementSystem.resources;
 
 
-import com.marceloHsousa.LibraryManagementSystem.entities.User;
+import com.marceloHsousa.LibraryManagementSystem.entities.user.User;
 import com.marceloHsousa.LibraryManagementSystem.entities.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

@@ -1,6 +1,6 @@
 package com.marceloHsousa.LibraryManagementSystem.config;
 
-import com.marceloHsousa.LibraryManagementSystem.entities.User;
+import com.marceloHsousa.LibraryManagementSystem.entities.user.User;
 import com.marceloHsousa.LibraryManagementSystem.repositories.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;

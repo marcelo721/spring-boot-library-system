@@ -1,6 +1,6 @@
 package com.marceloHsousa.LibraryManagementSystem.entities.services;
 
-import com.marceloHsousa.LibraryManagementSystem.entities.User;
+import com.marceloHsousa.LibraryManagementSystem.entities.user.User;
 import com.marceloHsousa.LibraryManagementSystem.entities.services.exceptions.ResourcesNotFoundException;
 import com.marceloHsousa.LibraryManagementSystem.repositories.UserRepository;
 import com.marceloHsousa.LibraryManagementSystem.entities.services.exceptions.DatabaseException;

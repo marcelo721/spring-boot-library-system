@@ -1,7 +1,7 @@
-package com.marceloHsousa.LibraryManagementSystem.entities;
+package com.marceloHsousa.LibraryManagementSystem.entities.loan;
 
+import com.marceloHsousa.LibraryManagementSystem.entities.book.Book;
 import jakarta.persistence.*;
-import org.hibernate.annotations.Fetch;
 
 import java.util.Date;
 

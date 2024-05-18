@@ -1,4 +1,4 @@
-package com.marceloHsousa.LibraryManagementSystem.entities;
+package com.marceloHsousa.LibraryManagementSystem.entities.author;
 
 import jakarta.persistence.*;
 

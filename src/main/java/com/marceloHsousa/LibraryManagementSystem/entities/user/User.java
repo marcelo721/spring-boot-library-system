@@ -1,8 +1,8 @@
-package com.marceloHsousa.LibraryManagementSystem.entities;
+package com.marceloHsousa.LibraryManagementSystem.entities.user;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.marceloHsousa.LibraryManagementSystem.entities.loan.Loan;
 import jakarta.persistence.*;
-import org.hibernate.annotations.Fetch;
 
 import java.util.List;
 import java.util.Objects;

@@ -1,5 +1,6 @@
-package com.marceloHsousa.LibraryManagementSystem.entities;
+package com.marceloHsousa.LibraryManagementSystem.entities.category;
 
+import com.marceloHsousa.LibraryManagementSystem.entities.book.Book;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;

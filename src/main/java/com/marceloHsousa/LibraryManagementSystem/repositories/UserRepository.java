@@ -1,6 +1,6 @@
 package com.marceloHsousa.LibraryManagementSystem.repositories;
 
-import com.marceloHsousa.LibraryManagementSystem.entities.User;
+import com.marceloHsousa.LibraryManagementSystem.entities.user.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
