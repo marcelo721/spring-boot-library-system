@@ -39,7 +39,7 @@ public class BookResources {
 
     @PostMapping
     public ResponseEntity<Book> insert(@RequestBody Book book){
-
+        book.setId(null);
         Book object = service.insert(book);
 
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(object.getId()).toUri();

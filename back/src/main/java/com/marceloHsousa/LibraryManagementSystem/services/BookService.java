@@ -11,10 +11,13 @@ import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class BookService {
 
     private BookRepository bookRepository;
@@ -39,10 +42,12 @@ public class BookService {
         }
     }
 
+    @Transactional
     public Book insert (Book book){
        return bookRepository.save(book);
     }
 
+    @Transactional
     public void delete(Long id){
         try {
             bookRepository.deleteById(id);
@@ -55,6 +60,7 @@ public class BookService {
         }
     }
 
+    @Transactional
     public Book update(Long id, Book obj){
 
         try {
@@ -67,7 +73,8 @@ public class BookService {
             throw  new ResourcesNotFoundException(id);
         }
     }
-    private void updateData(Book entity, Book obj) {
+    @Transactional
+    public void updateData(Book entity, Book obj) {
         entity.setAvailable(obj.getAvailable());
     }
 }
