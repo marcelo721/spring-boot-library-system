@@ -1,6 +1,7 @@
 package com.marceloHsousa.LibraryManagementSystem.entities;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.Fetch;
 
 import java.util.Date;
 
@@ -18,6 +19,11 @@ public class Loan {
 
     @Column(name="endDate")
     private Date endDate;
+
+    @OneToOne(fetch = FetchType.EAGER, cascade = {CascadeType.DETACH, CascadeType.MERGE,
+                                                  CascadeType.PERSIST, CascadeType.REFRESH})
+    @JoinColumn(name="bood_id")
+    private Book book;
 
     public Loan(){
 
