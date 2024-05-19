@@ -5,6 +5,7 @@ import com.marceloHsousa.LibraryManagementSystem.entities.book.Book;
 import com.marceloHsousa.LibraryManagementSystem.entities.category.Category;
 import com.marceloHsousa.LibraryManagementSystem.entities.loan.Loan;
 import com.marceloHsousa.LibraryManagementSystem.entities.user.User;
+import com.marceloHsousa.LibraryManagementSystem.repositories.AuthorRepository;
 import com.marceloHsousa.LibraryManagementSystem.repositories.LoanRepository;
 import com.marceloHsousa.LibraryManagementSystem.repositories.UserRepository;
 import com.marceloHsousa.LibraryManagementSystem.services.BookService;
@@ -26,11 +27,14 @@ public class Instantiation implements CommandLineRunner {
     private BookService bookService;
     private PasswordEncoder passwordEncoder;
 
-    public Instantiation(UserService userService, LoanService loanService, BookService bookService, PasswordEncoder passwordEncoder) {
+    private AuthorRepository authorRepository;
+
+    public Instantiation(UserService userService, LoanService loanService, BookService bookService, PasswordEncoder passwordEncoder, AuthorRepository authorRepository) {
         this.userService = userService;
         this.loanService = loanService;
         this.bookService = bookService;
         this.passwordEncoder = passwordEncoder;
+        this.authorRepository = authorRepository;
     }
 
     @Override
@@ -47,6 +51,8 @@ public class Instantiation implements CommandLineRunner {
         User userTest=userService.findByEmail("gabriel@gmail.com");
 
         Author author=new Author(null, "Eliabe Vigelis", new Date(), "Russo");
+
+        authorRepository.save(author);
 
         List<Category> categories=new ArrayList<>();
 
