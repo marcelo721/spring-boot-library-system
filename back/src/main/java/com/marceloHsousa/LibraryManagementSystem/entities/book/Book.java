@@ -48,6 +48,13 @@ public class Book {
     @Getter(AccessLevel.NONE)
     private List<Category> categories;
 
+    public void addCategory(Category c){
+        if(this.categories==null){
+            this.categories=new ArrayList<>();
+        }
+        categories.add(c);
+    }
+
     public List<Category> getCategories() {
         return categories;
     }
