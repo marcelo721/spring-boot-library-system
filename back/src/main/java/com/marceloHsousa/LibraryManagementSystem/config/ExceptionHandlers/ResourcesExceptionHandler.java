@@ -1,5 +1,6 @@
-package com.marceloHsousa.LibraryManagementSystem.resources.exceptions;
+package com.marceloHsousa.LibraryManagementSystem.config.ExceptionHandlers;
 
+import com.marceloHsousa.LibraryManagementSystem.resources.exceptions.StandardError;
 import com.marceloHsousa.LibraryManagementSystem.services.exceptions.DatabaseException;
 import com.marceloHsousa.LibraryManagementSystem.services.exceptions.ResourcesNotFoundException;
 import jakarta.servlet.http.HttpServletRequest;
