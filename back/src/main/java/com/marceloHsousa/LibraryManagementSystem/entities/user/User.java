@@ -39,7 +39,7 @@ public class User {
     @Column(name="role")
     private String role;
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name="user_id")
     @Getter(AccessLevel.NONE)
     private List<Loan> loans;

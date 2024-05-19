@@ -59,8 +59,8 @@ public class Instantiation implements CommandLineRunner {
 
         List<Category> categories=new ArrayList<>();
 
-        categoryRepository.save(new Category(null, "Ação", "Livros de Ação", null));
-        categoryRepository.save(new Category(null, "Drama", "Livros de Drama", null));
+        categories.add(new Category(null, "Ação", "Livros de Ação", null));
+        categories.add(new Category(null, "Drama", "Livros de Drama", null));
 
         List<Book> books=new ArrayList<>();
 
@@ -72,7 +72,6 @@ public class Instantiation implements CommandLineRunner {
         userTest.addLoan(new Loan(null, new Date(), new Date(), books.get(1)));
 
         Category category1 = new Category(null, "terror", "terrozin", null);
-
 
         userService.save(userTest);
     }

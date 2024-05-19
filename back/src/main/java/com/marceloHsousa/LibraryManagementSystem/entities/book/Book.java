@@ -48,7 +48,6 @@ public class Book {
     @Getter(AccessLevel.NONE)
     private List<Category> categories;
 
-    @JsonIgnore
     public List<Category> getCategories() {
         return categories;
     }

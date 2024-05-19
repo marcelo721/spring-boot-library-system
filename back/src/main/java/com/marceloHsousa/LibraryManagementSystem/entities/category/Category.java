@@ -29,7 +29,7 @@ public class Category {
     @Column(name="description")
     private String description;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.DETACH, CascadeType.MERGE,
+    @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.DETACH, CascadeType.MERGE,
                                                     CascadeType.PERSIST, CascadeType.REFRESH})
     @JoinTable(
             name = "book_category",
