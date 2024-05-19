@@ -1,5 +1,6 @@
 package com.marceloHsousa.LibraryManagementSystem.entities.book;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.marceloHsousa.LibraryManagementSystem.entities.category.Category;
 import com.marceloHsousa.LibraryManagementSystem.entities.author.Author;
 import jakarta.persistence.*;
@@ -44,5 +45,11 @@ public class Book {
             joinColumns = @JoinColumn(name = "book_id"),
             inverseJoinColumns = @JoinColumn(name = "category_id")
     )
+    @Getter(AccessLevel.NONE)
     private List<Category> categories;
+
+    @JsonIgnore
+    public List<Category> getCategories() {
+        return categories;
+    }
 }

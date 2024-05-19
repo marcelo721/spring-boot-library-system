@@ -16,7 +16,7 @@ public class SecurityConfig {
         return http.csrf().disable()
                 .authorizeHttpRequests((request) -> request
                         .requestMatchers("/users", "/loans", "/books", "/users/*").hasRole("ADMIN")
-                        .requestMatchers("*").permitAll()) //Teste da role admin
+                        .anyRequest().permitAll()) //Teste da role admin
                 .formLogin(Customizer.withDefaults())
                 .httpBasic(Customizer.withDefaults()).build();
     }

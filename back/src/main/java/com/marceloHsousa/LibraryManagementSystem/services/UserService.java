@@ -39,9 +39,22 @@ public class UserService {
         }
     }
 
+    public User findByEmail(String email){
+        Optional<List<User>> user=userRepository.findByEmail(email);
+        if(user.isPresent()){
+            return user.get().get(0);
+        }else{
+            throw new UserNotFoundException("User Not Found");
+        }
+    }
+
     @Transactional
-    public User insert (User user){
+    public User save(User user){
         return userRepository.save(user);
+    }
+    @Transactional
+    public List<User> saveAll(List<User> users){
+        return userRepository.saveAll(users);
     }
 
     @Transactional
@@ -70,7 +83,6 @@ public class UserService {
         }
     }
 
-    @Transactional
     private void updateData(User entity, User obj) {
 
         entity.setName(obj.getName());

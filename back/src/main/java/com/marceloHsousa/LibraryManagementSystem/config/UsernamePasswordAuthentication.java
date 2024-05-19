@@ -15,6 +15,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Component
 public class UsernamePasswordAuthentication implements AuthenticationProvider {
@@ -32,10 +33,10 @@ public class UsernamePasswordAuthentication implements AuthenticationProvider {
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
         String username=authentication.getName();
         String password=authentication.getCredentials().toString();
-        List<User> list=userRepository.findByEmail(username);
-        if(list.size()>0){
-            if (passwordEncoder.matches(password, list.get(0).getPassword())){
-                return new UsernamePasswordAuthenticationToken(username, password, grantedAuthorities(list.get(0).getRole()));
+        Optional<List<User>> list=userRepository.findByEmail(username);
+        if(list.isPresent()){
+            if (passwordEncoder.matches(password, list.get().get(0).getPassword())){
+                return new UsernamePasswordAuthenticationToken(username, password, grantedAuthorities(list.get().get(0).getRole()));
             }else{
                 throw new BadCredentialsException("Invalid password");
             }

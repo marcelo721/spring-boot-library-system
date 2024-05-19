@@ -43,8 +43,13 @@ public class BookService {
     }
 
     @Transactional
-    public Book insert (Book book){
+    public Book save(Book book){
        return bookRepository.save(book);
+    }
+
+    @Transactional
+    public List<Book> saveAll(List<Book> books){
+        return bookRepository.saveAll(books);
     }
 
     @Transactional
@@ -73,8 +78,8 @@ public class BookService {
             throw  new ResourcesNotFoundException(id);
         }
     }
-    @Transactional
-    public void updateData(Book entity, Book obj) {
+
+    private void updateData(Book entity, Book obj) {
         entity.setAvailable(obj.getAvailable());
     }
 }

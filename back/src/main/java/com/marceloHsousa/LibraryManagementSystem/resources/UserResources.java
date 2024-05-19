@@ -40,7 +40,7 @@ public class UserResources {
     public ResponseEntity<User> insert(@RequestBody User user){
 
         user.setId(null);
-        User object = service.insert(user);
+        User object = service.save(user);
 
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(object.getId()).toUri();
         return ResponseEntity.created(uri).body(object);
