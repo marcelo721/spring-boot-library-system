@@ -6,8 +6,6 @@ import com.marceloHsousa.LibraryManagementSystem.entities.category.Category;
 import com.marceloHsousa.LibraryManagementSystem.entities.loan.Loan;
 import com.marceloHsousa.LibraryManagementSystem.entities.user.User;
 import com.marceloHsousa.LibraryManagementSystem.repositories.AuthorRepository;
-import com.marceloHsousa.LibraryManagementSystem.repositories.LoanRepository;
-import com.marceloHsousa.LibraryManagementSystem.repositories.UserRepository;
 import com.marceloHsousa.LibraryManagementSystem.services.BookService;
 import com.marceloHsousa.LibraryManagementSystem.services.LoanService;
 import com.marceloHsousa.LibraryManagementSystem.services.UserService;
