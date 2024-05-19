@@ -7,9 +7,7 @@ import com.marceloHsousa.LibraryManagementSystem.entities.loan.Loan;
 import com.marceloHsousa.LibraryManagementSystem.entities.user.User;
 import com.marceloHsousa.LibraryManagementSystem.repositories.AuthorRepository;
 import com.marceloHsousa.LibraryManagementSystem.repositories.CategoryRepository;
-import com.marceloHsousa.LibraryManagementSystem.services.BookService;
-import com.marceloHsousa.LibraryManagementSystem.services.LoanService;
-import com.marceloHsousa.LibraryManagementSystem.services.UserService;
+import com.marceloHsousa.LibraryManagementSystem.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
@@ -27,23 +25,20 @@ public class Instantiation implements CommandLineRunner {
     private LoanService loanService;
     private BookService bookService;
     private PasswordEncoder passwordEncoder;
-
-    private AuthorRepository authorRepository;
-
-    private CategoryRepository categoryRepository;
+    private AuthorService authorService;
+    private CategoryService categoryRepository;
 
 
     @Autowired
-    public Instantiation(UserService userService, LoanService loanService, BookService bookService,
-                                PasswordEncoder passwordEncoder, AuthorRepository authorRepository,
-                                                           CategoryRepository categoryRepository) {
+    public Instantiation(UserService userService, LoanService loanService, BookService bookService, PasswordEncoder passwordEncoder, AuthorService authorService, CategoryService categoryRepository) {
         this.userService = userService;
         this.loanService = loanService;
         this.bookService = bookService;
         this.passwordEncoder = passwordEncoder;
-        this.authorRepository = authorRepository;
+        this.authorService = authorService;
         this.categoryRepository = categoryRepository;
     }
+
 
     @Override
     public void run(String... args) throws Exception {
@@ -60,7 +55,7 @@ public class Instantiation implements CommandLineRunner {
 
         Author author=new Author(null, "Eliabe Vigelis", new Date(), "Russo");
 
-        authorRepository.save(author);
+        authorService.save(author);
 
         List<Category> categories=new ArrayList<>();
 
