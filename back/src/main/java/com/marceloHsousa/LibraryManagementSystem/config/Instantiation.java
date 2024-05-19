@@ -6,14 +6,17 @@ import com.marceloHsousa.LibraryManagementSystem.entities.category.Category;
 import com.marceloHsousa.LibraryManagementSystem.entities.loan.Loan;
 import com.marceloHsousa.LibraryManagementSystem.entities.user.User;
 import com.marceloHsousa.LibraryManagementSystem.repositories.AuthorRepository;
+import com.marceloHsousa.LibraryManagementSystem.repositories.CategoryRepository;
 import com.marceloHsousa.LibraryManagementSystem.services.BookService;
 import com.marceloHsousa.LibraryManagementSystem.services.LoanService;
 import com.marceloHsousa.LibraryManagementSystem.services.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -27,12 +30,19 @@ public class Instantiation implements CommandLineRunner {
 
     private AuthorRepository authorRepository;
 
-    public Instantiation(UserService userService, LoanService loanService, BookService bookService, PasswordEncoder passwordEncoder, AuthorRepository authorRepository) {
+    private CategoryRepository categoryRepository;
+
+
+    @Autowired
+    public Instantiation(UserService userService, LoanService loanService, BookService bookService,
+                                PasswordEncoder passwordEncoder, AuthorRepository authorRepository,
+                                                           CategoryRepository categoryRepository) {
         this.userService = userService;
         this.loanService = loanService;
         this.bookService = bookService;
         this.passwordEncoder = passwordEncoder;
         this.authorRepository = authorRepository;
+        this.categoryRepository = categoryRepository;
     }
 
     @Override
@@ -54,8 +64,8 @@ public class Instantiation implements CommandLineRunner {
 
         List<Category> categories=new ArrayList<>();
 
-        categories.add(new Category(null, "Ação", "Livros de Ação", null));
-        categories.add(new Category(null, "Drama", "Livros de Drama", null));
+        categoryRepository.save(new Category(null, "Ação", "Livros de Ação", null));
+        categoryRepository.save(new Category(null, "Drama", "Livros de Drama", null));
 
         List<Book> books=new ArrayList<>();
 
@@ -65,6 +75,9 @@ public class Instantiation implements CommandLineRunner {
         userTest.setLoans(loanService.findLoansByUser(userTest));
         userTest.addLoan(new Loan(null, new Date(), new Date(), books.get(0)));
         userTest.addLoan(new Loan(null, new Date(), new Date(), books.get(1)));
+
+        Category category1 = new Category(null, "terror", "terrozin", null);
+
 
         userService.save(userTest);
     }
