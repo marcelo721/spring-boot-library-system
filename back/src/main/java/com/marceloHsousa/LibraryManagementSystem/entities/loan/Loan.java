@@ -2,11 +2,18 @@ package com.marceloHsousa.LibraryManagementSystem.entities.loan;
 
 import com.marceloHsousa.LibraryManagementSystem.entities.book.Book;
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.util.Date;
 
 @Entity
 @Table(name="loans")
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@ToString
+@EqualsAndHashCode
 public class Loan {
 
     @Id
@@ -24,37 +31,4 @@ public class Loan {
                                                   CascadeType.PERSIST, CascadeType.REFRESH})
     @JoinColumn(name="book_id")
     private Book book;
-
-    public Loan(){
-
-    }
-
-    public Loan(Date startDate, Date endDate) {
-        this.startDate = startDate;
-        this.endDate = endDate;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Date getStartDate() {
-        return startDate;
-    }
-
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
-    }
-
-    public Date getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
-    }
 }

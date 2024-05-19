@@ -3,12 +3,19 @@ package com.marceloHsousa.LibraryManagementSystem.entities.book;
 import com.marceloHsousa.LibraryManagementSystem.entities.category.Category;
 import com.marceloHsousa.LibraryManagementSystem.entities.author.Author;
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Table(name="books")
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@ToString
+@EqualsAndHashCode
 public class Book {
 
     @Id
@@ -38,56 +45,4 @@ public class Book {
             inverseJoinColumns = @JoinColumn(name = "category_id")
     )
     private List<Category> categories;
-
-    public Book(){
-        this.categories=new ArrayList<>();
-    }
-
-    public Book(String title, String isbn, Boolean available, Author author) {
-        this.title = title;
-        this.isbn = isbn;
-        this.available = available;
-        this.author = author;
-        this.categories=new ArrayList<>();
-    }
-
-    public Author getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(Author author) {
-        this.author = author;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getIsbn() {
-        return isbn;
-    }
-
-    public void setIsbn(String isbn) {
-        this.isbn = isbn;
-    }
-
-    public Boolean getAvailable() {
-        return available;
-    }
-
-    public void setAvailable(Boolean available) {
-        this.available = available;
-    }
 }

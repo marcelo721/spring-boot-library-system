@@ -31,17 +31,17 @@ public class Instantiation implements CommandLineRunner {
         userRepository.deleteAll();
         List<User> users = new ArrayList<>();
 
-        users.add(new User("Gabriel Meireles", "gabriel@gmail.com", passwordEncoder.encode("gabe123"), "ROLE_ADMIN"));
-        users.add(new User("Ana Silva", "ana@gmail.com", passwordEncoder.encode("ana456"), "ROLE_USER"));
-        users.add(new User("João Santos", "joao@gmail.com", passwordEncoder.encode("joao789"), "ROLE_USER"));
-        users.add(new User("Maria Oliveira", "maria@gmail.com", passwordEncoder.encode("maria321"), "ROLE_ADMIN"));
+        users.add(new User(null, "Gabriel Meireles", "gabriel@gmail.com", passwordEncoder.encode("gabe123"), "ROLE_ADMIN", null));
+        users.add(new User(null, "Ana Silva", "ana@gmail.com", passwordEncoder.encode("ana456"), "ROLE_USER", null));
+        users.add(new User(null, "João Santos", "joao@gmail.com", passwordEncoder.encode("joao789"), "ROLE_USER", null));
+        users.add(new User(null,"Maria Oliveira", "maria@gmail.com", passwordEncoder.encode("maria321"), "ROLE_ADMIN", null));
 
         userRepository.saveAll(users);
         User userTest=userRepository.findByEmail("gabriel@gmail.com").get(0);
         userTest.setLoans(loanRepository.findLoansByUser(userTest));
-        userTest.addLoan(new Loan(new Date(), new Date()));
-        userTest.addLoan(new Loan(new Date(), new Date()));
-        userTest.addLoan(new Loan(new Date(), new Date()));
+        userTest.addLoan(new Loan(null, new Date(), new Date(), null));
+        userTest.addLoan(new Loan(null, new Date(), new Date(), null));
+        userTest.addLoan(new Loan(null, new Date(), new Date(), null));
 
         userRepository.save(userTest);
     }
