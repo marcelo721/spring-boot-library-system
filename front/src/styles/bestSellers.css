@@ -1,0 +1,65 @@
+.newItem{
+    width: 250px;
+    height: 350px;
+    background-color: rgb(40, 40, 40);
+
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.388);
+
+    background: transparent center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    border: 2px solid white;
+
+    transition: .5s;
+}
+
+.newItem:hover{
+    width: 275px;
+}
+
+#first{
+    background-image: url('../assets/images/book-covers/city-of\ orange.jpg');
+}
+
+#second{
+    background-image: url('../assets/images/book-covers/great.jpg');
+}
+
+#third{
+    background-image: url('../assets/images/book-covers/hp.jpg');
+}
+
+#fourth{
+    background-image: url('../assets/images/book-covers/norse\ my.jpeg');
+}
+
+.description{
+    background-color: rgba(0, 0, 0, 0.923);
+    width: 100%;
+    height: 30%;
+
+    padding: 5px;
+
+    position: relative;
+    top: 70%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.description > *{
+    color: white;
+    margin: 0 !important;
+}
+
+.description > h2{
+    font-family: "Playfair Display", serif;
+    font-size: 1.5rem;
+}
+
+.description > p{
+    font-family: "Poppins", sans-serif;
+}
