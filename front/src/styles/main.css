@@ -17,7 +17,6 @@
 
 body{
     width: 100vw;
-    height: 100vh;
     background-color: #252525 !important;
     overflow-x: hidden;
 }
@@ -170,30 +169,6 @@ a#login-b:hover{
     align-items: center;
     gap: 50px;
 }
-
-.products .item{
-    height: 250px;
-    width: 190px;
-
-    border-radius: 20px;
-
-    transition: 1s;
-}
-
-.item:hover{
-    height: 275px;
-    width: 215px;
-}
-
-.item img{
-    height: 100%;
-    width: 100%;
-
-    border-radius: 20px;
-
-    cursor: pointer;
-}
-
 
 .description h3{
     color: white !important;

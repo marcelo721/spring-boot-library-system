@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/bestSellers.css">
     <link rel="stylesheet" href="styles/form.css">
+    <link rel="stylesheet" href="styles/modal.css">
+    <link rel="stylesheet" href="styles/mq/max-width-800px.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
@@ -42,31 +45,31 @@
     </div>
 
     <div class="products">
-        <div class="newItem" id="first">
+        <div class="newItem" id="first" data-bs-toggle="modal" data-bs-target="#book-1">
             <div class="description">
                 <h2>City of Orange</h2>
-                <p>Autor: Camdaf</p>
+                <p>Author: Camdaf</p>
                 <p>Released: 9 April 1997</p>
             </div>
         </div>
-        <div class="newItem" id="second">
+        <div class="newItem" id="second" data-bs-toggle="modal" data-bs-target="#book-2">
             <div class="description">
-                <h2>City of Orange</h2>
-                <p>Autor: Camdaf</p>
+                <h2>The Great Gasby</h2>
+                <p>Author: Camdaf</p>
                 <p>Released: 9 April 1997</p>
             </div>
         </div>
-        <div class="newItem" id="third">
+        <div class="newItem" id="third" data-bs-toggle="modal" data-bs-target="#book-3">
             <div class="description">
-                <h2>City of Orange</h2>
-                <p>Autor: Camdaf</p>
+                <h2>Harry Potter</h2>
+                <p>Author: Camdaf</p>
                 <p>Released: 9 April 1997</p>
             </div>
         </div>
-        <div class="newItem" id="fourth">
+        <div class="newItem" id="fourth" data-bs-toggle="modal" data-bs-target="#book-4">
             <div class="description">
-                <h2>City of Orange</h2>
-                <p>Autor: Camdaf</p>
+                <h2>Norse Mythology</h2>
+                <p>Author: Camdaf</p>
                 <p>Released: 9 April 1997</p>
             </div>
         </div>
@@ -85,11 +88,68 @@
                 <input type="text" name="" id="" placeholder="Your Name:">
                 <input type="email" name="" id="" placeholder="Your E-mail:">
                 <textarea name="" id="" placeholder="Your Message:"></textarea>
-                <button>Submit</button>
+                <button id = "#submit">Submit</button>
             </form>
         </div>
     </div>
 
+
+    <div class="modal fade" id="book-1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">City of Orange</h1>
+            </div>
+            <div class="modal-body">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi possimus nostrum, corporis est, quas molestiae repellendus ducimus modi veniam blanditiis facilis accusamus ipsam illum officiis. Nam earum odit quisquam temporibus.</p>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi possimus nostrum, corporis est, quas molestiae repellendus ducimus modi veniam blanditiis facilis accusamus ipsam illum officiis. Nam earum odit quisquam temporibus.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <div class="modal fade" id="book-2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">The Great Gasby</h1>
+            </div>
+            <div class="modal-body">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi possimus nostrum, corporis est, quas molestiae repellendus ducimus modi veniam blanditiis facilis accusamus ipsam illum officiis. Nam earum odit quisquam temporibus.</p>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi possimus nostrum, corporis est, quas molestiae repellendus ducimus modi veniam blanditiis facilis accusamus ipsam illum officiis. Nam earum odit quisquam temporibus.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <div class="modal fade" id="book-3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Harry Potter</h1>
+            </div>
+            <div class="modal-body">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi possimus nostrum, corporis est, quas molestiae repellendus ducimus modi veniam blanditiis facilis accusamus ipsam illum officiis. Nam earum odit quisquam temporibus.</p>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi possimus nostrum, corporis est, quas molestiae repellendus ducimus modi veniam blanditiis facilis accusamus ipsam illum officiis. Nam earum odit quisquam temporibus.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <div class="modal fade" id="book-4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Norse Mythology</h1>
+            </div>
+            <div class="modal-body">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi possimus nostrum, corporis est, quas molestiae repellendus ducimus modi veniam blanditiis facilis accusamus ipsam illum officiis. Nam earum odit quisquam temporibus.</p>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi possimus nostrum, corporis est, quas molestiae repellendus ducimus modi veniam blanditiis facilis accusamus ipsam illum officiis. Nam earum odit quisquam temporibus.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

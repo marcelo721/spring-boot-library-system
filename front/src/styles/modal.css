@@ -1,0 +1,19 @@
+
+.modal-content{
+    background-color: #252525 !important;
+
+    color: white !important;
+}
+
+.modal-body > p{
+   text-align: justify; 
+   font-family: "Poppins", sans-serif;
+}
+
+#exampleModalLabel{
+    font-family: "Playfair Display", serif; 
+    font-size: 2rem !important;
+    margin: auto !important;
+    color: #b36feb;
+    font-weight: 700;
+}

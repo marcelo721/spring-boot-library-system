@@ -12,6 +12,8 @@
     border: 2px solid white;
 
     transition: .5s;
+
+    cursor: pointer;
 }
 
 .newItem:hover{
@@ -57,7 +59,7 @@
 
 .description > h2{
     font-family: "Playfair Display", serif;
-    font-size: 1.5rem;
+    font-size: 1.2em;
 }
 
 .description > p{
