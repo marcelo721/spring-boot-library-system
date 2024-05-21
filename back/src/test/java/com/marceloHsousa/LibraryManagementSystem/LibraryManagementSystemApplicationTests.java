@@ -55,9 +55,21 @@ class LibraryManagementSystemApplicationTests {
 	//User tests
 
 	@Test
-	public void crateUser(){
+	public void crateUserAndFindUserByEmail(){
 		userService.save(new User(null, "Marcelim", "marcelo@gmail.com", passwordEncoder.encode("gabe123"), "ROLE_ADMIN", null));
 		User user=userService.findByEmail("marcelo@gmail.com");
 		assertEquals("marcelo@gmail.com", user.getEmail());
+	}
+
+	@Test
+	public void updateUser(){
+		User user=new User(null, "Marcelim", "marcelo@gmail.com", passwordEncoder.encode("gabe123"), "ROLE_ADMIN", null);
+		userService.save(user);
+		user=userService.findByEmail("marcelo@gmail.com");
+		assertEquals("Marcelim", user.getName());
+		user.setEmail("marcelobolsonaro@gmail.com");
+		userService.update(user.getId(), user);
+		user=userService.findByEmail("marcelobolsonaro@gmail.com");
+		assertEquals("marcelobolsonaro@gmail.com", user.getEmail());
 	}
 }
